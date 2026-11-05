@@ -7,8 +7,8 @@ Two parts:
   - effect_keys.lua (hammerspoon folder), which catches the keys
 
 Quickest install: double-click "Install Hammerspoon Shortcuts.command" at the
-top of the repository for steps 2-4, and install the panel from its .ccx file
-(see the main README) instead of step 5.
+top of the repository for steps 2-4,. The panel still loads through UXP
+Developer Tools (step 5).
 
 ONE-TIME SETUP
 1. Install Hammerspoon (free) from https://www.hammerspoon.org and open it.

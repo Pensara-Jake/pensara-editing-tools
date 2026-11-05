@@ -2,7 +2,7 @@
 
 Plugins and scripts for Premiere Pro, After Effects and Photoshop, built in-house at Pensara.
 
-Download the latest versions from the **Releases** page on GitHub. You don't need to touch the code.
+To install, get a copy of this repository: in GitHub Desktop choose **File > Clone Repository**, or download it from GitHub as a ZIP. Then follow the steps below.
 
 ## What's included
 
@@ -18,9 +18,12 @@ Download the latest versions from the **Releases** page on GitHub. You don't nee
 ## Installing
 
 ### Premiere panels (Effect Keys, Split Stacker)
-1. Download the `.ccx` file from the latest release.
-2. Double-click it. Creative Cloud installs the panel.
-3. In Premiere: **Window > UXP Plugins**, then choose the panel and dock it.
+1. In Premiere: **Settings > Plugins**, tick **Enable developer mode**, restart Premiere.
+2. Install **UXP Developer Tools** from the Creative Cloud app and open it.
+3. Click **Add Plugin**, choose the panel's `manifest.json` (`premiere/effect-keys/panel` or `premiere/split-stacker`), then click **Load**.
+4. In Premiere: **Window > UXP Plugins**, then choose the panel and dock it.
+
+If a panel is missing after Premiere restarts, click **Load** on it again in UXP Developer Tools.
 
 ### Hammerspoon shortcuts (Effect Keys helper, Cut In/Out)
 Effect Keys needs [Hammerspoon](https://www.hammerspoon.org) to catch its shortcuts. Cut In/Out runs entirely in Hammerspoon.
@@ -52,4 +55,3 @@ All of these only work while Premiere Pro is the front app.
 
 - Every change to a tool gets a version bump, in the tool's file (manifest `version`, `__version__`, or the version line at the top of the script) and in `CHANGELOG.md`.
 - Use [semantic versioning](https://semver.org): fixes bump the last number (1.0.1), new features the middle (1.1.0), changes that break existing use the first (2.0.0).
-- To release a panel: in UXP Developer Tools, choose the plugin's **Package** option to build a `.ccx`, then attach it to a new GitHub Release named after the tool and version, e.g. `effect-keys-1.0.1`.
