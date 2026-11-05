@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# beatmarkers local install
+premiere/beatmarkers/.venv/
+premiere/beatmarkers/.install_ok
+__pycache__/
+*.pyc
+
+# Generated output and logs
+*_markers.xml
+*_markers.edl
+*_markers.csv
+cut_in_out_log.txt
+cut_in_out_menus.txt
+
+# Packaged plugins (attach these to GitHub Releases instead)
+*.ccx

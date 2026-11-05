@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      body { padding: 12px; color: var(--uxp-host-text-color, #ddd); font-size: 12px; }
+      .row { display: flex; align-items: center; margin: 8px 0; }
+      .row label { margin-right: 8px; }
+      #zoom { width: 70px; }
+      #run { width: 100%; margin: 10px 0; }
+      #log { white-space: pre-wrap; font-family: monospace; font-size: 11px; opacity: 0.9; }
+      .hint { opacity: 0.7; margin-bottom: 6px; }
+    </style>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div class="hint">In your 9x16 sequence, select both halves of the split(s), then click Restack.</div>
+
+    <div class="row">
+      <sp-checkbox id="leftOnTop" checked>Left shot goes on top</sp-checkbox>
+    </div>
+
+    <div class="row">
+      <label for="zoom">Extra zoom</label>
+      <input id="zoom" type="number" value="1.0" step="0.05" min="1" />
+    </div>
+
+    <sp-button id="run" variant="cta">Restack selected</sp-button>
+
+    <div id="log"></div>
+  </body>
+</html>

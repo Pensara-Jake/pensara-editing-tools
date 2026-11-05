@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <style>
+      body { padding: 10px; color: var(--uxp-host-text-color, #ddd); font-size: 12px; }
+      h3 { font-size: 12px; margin: 14px 0 6px; opacity: 0.8; text-transform: uppercase; letter-spacing: 0.5px; }
+      input { width: 100%; box-sizing: border-box; }
+      #status { padding: 4px 6px; border-radius: 3px; margin-bottom: 8px; }
+      #status.ok { background: #1f4d2b; }
+      #status.bad { background: #5a2323; }
+      #results { max-height: 180px; overflow-y: auto; border: 1px solid #444; margin-top: 4px; }
+      .result { padding: 3px 6px; cursor: pointer; display: flex; justify-content: space-between; }
+      .result:hover { background: #3a3a3a; }
+      .result.chosen { background: #2d5a88; }
+      .kind { opacity: 0.55; font-size: 10px; margin-left: 8px; }
+      #chosen { margin: 6px 0; opacity: 0.85; }
+      .addrow { display: flex; margin-top: 6px; }
+      .addrow input { flex: 1; margin-right: 6px; }
+      table { width: 100%; border-collapse: collapse; }
+      td { padding: 4px 4px; border-bottom: 1px solid #3a3a3a; vertical-align: middle; }
+      td.key { font-family: monospace; white-space: nowrap; }
+      td.del { text-align: right; width: 24px; }
+      .x { cursor: pointer; opacity: 0.6; padding: 0 4px; }
+      .x:hover { opacity: 1; }
+      .fail { color: #ff8a80; }
+      #log { white-space: pre-wrap; font-family: monospace; font-size: 11px; opacity: 0.85; margin-top: 10px; }
+      .hint { opacity: 0.65; font-size: 11px; margin-top: 4px; }
+    </style>
+    <script src="index.js"></script>
+  </head>
+  <body>
+    <div id="status" class="bad">Helper not connected</div>
+
+    <h3>Add a shortcut</h3>
+    <input id="search" type="text" placeholder="Search effects (e.g. gaussian, lumetri, denoise)" />
+    <div id="results"></div>
+    <div id="chosen">No effect chosen</div>
+    <div class="addrow">
+      <input id="combo" type="text" placeholder="Click, then press keys" />
+      <sp-button id="add" variant="cta">Add</sp-button>
+    </div>
+    <div class="hint">Use a combination Premiere doesn't already use, e.g. ⌃⌥1. You can also type it: ctrl+alt+1</div>
+
+    <h3>Shortcuts</h3>
+    <table id="bindings"></table>
+
+    <div id="log"></div>
+  </body>
+</html>
